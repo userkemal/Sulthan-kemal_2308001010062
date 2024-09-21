@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Nama dan NIM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Input Data Mahasiswa</h1>
+        <div id="input-section">
+            <p class="intro">Silakan masukkan nama dan NIM Anda di bawah ini:</p>
+        </div>
+        <p id="output" class="hidden"></p>
+    </div>
+
+    <script>
+        // Fungsi untuk meminta input dari pengguna
+        function inputData() {
+            let nama = prompt("Masukkan nama Anda:");
+            if (!nama) {
+                alert("Nama tidak boleh kosong!");
+                return;
+            }
+            let nim = prompt("Masukkan NIM Anda:");
+            if (!nim) {
+                alert("NIM tidak boleh kosong!");
+                return;
+            }
+
+            // Tampilkan hasil input pengguna
+            document.getElementById("output").innerHTML = 
+                "<strong>Nama:</strong> " + nama + "<br><strong>NIM:</strong> " + nim;
+
+            // Tampilkan output dengan efek transisi
+            document.getElementById("output").classList.remove("hidden");
+        }
+
+        // Jalankan fungsi inputData setelah halaman dimuat
+        window.onload = inputData;
+    </script>
+</body>
+</html>
